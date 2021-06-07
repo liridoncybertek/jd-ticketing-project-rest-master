@@ -1,5 +1,5 @@
 app:
-  local-url: http://localhost:${server.port}
+  local-url: http://localhost:4200
 server:
   port: 8082
 spring:

@@ -23,13 +23,13 @@ public class ExceptionMessageHandler {
     @ExceptionHandler(TicketingProjectException.class)
     public ResponseEntity<ResponseWrapper> serviceException(TicketingProjectException se){
         String message = se.getMessage();
-        return new ResponseEntity<>(ResponseWrapper.builder().success(false).code(HttpStatus.CONFLICT.value()).message(message).build(),HttpStatus.CONFLICT);
+        return new ResponseEntity<>(ResponseWrapper.builder().success(false).code(HttpStatus.CONFLICT.value()).message(message).build(),HttpStatus.OK);
     }
 
     @ExceptionHandler(AccessDeniedException.class)
     public ResponseEntity<ResponseWrapper> accessDeniedException(AccessDeniedException se){
         String message = se.getMessage();
-        return new ResponseEntity<>(ResponseWrapper.builder().success(false).code(HttpStatus.FORBIDDEN.value()).message(message).build(),HttpStatus.CONFLICT);
+        return new ResponseEntity<>(ResponseWrapper.builder().success(false).code(HttpStatus.FORBIDDEN.value()).message(message).build(),HttpStatus.OK);
     }
 
     @ExceptionHandler({Exception.class, RuntimeException.class, Throwable.class, BadCredentialsException.class})

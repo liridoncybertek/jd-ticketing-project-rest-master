@@ -150,7 +150,7 @@ public class UserController {
                 .token(createdConfirmationToken.getToken())
                 .subject("Confirm Registration")
                 .message("To confirm your account, please click here:")
-                .url(BASE_URL + "/confirmation?token=")
+                .url(BASE_URL + "/guest/confirmation?token=")
                 .build();
     }
 

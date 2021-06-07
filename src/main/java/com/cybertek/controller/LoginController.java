@@ -72,7 +72,7 @@ public class LoginController {
 
 		ConfirmationToken confirmationToken = confirmationTokenService.readByToken(token);
 		UserDTO confirmUser = userService.confirm(confirmationToken.getUser());
-//		confirmationTokenService.delete(confirmationToken);
+		confirmationTokenService.delete(confirmationToken);
 
 		return ResponseEntity.ok(new ResponseWrapper("User has been confirmed!",confirmUser));
 
